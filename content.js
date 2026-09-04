@@ -42,19 +42,19 @@ window.CONTENT = {
       story:"Same day, much later. I kept trying to get one decent photo of the two of us and you kept moving. We got one. It's the one where you're laughing at me for trying." },
 
     { id:"balcony", day:"2026-08-08", to:"1800", date:"8 August", year:"2026",
-      title:"Rain On The Balcony", place:"The balcony", match:"97% Match",
-      badge:"TOP 10", duration:"Until it stopped", tags:["Best Of"],
-      story:"It started raining and we went out to watch it instead of talking through it. I took two photos and then put the phone away, which for me is an enormous amount of restraint." },
+      title:"The Balcony", place:"The balcony", match:"97% Match",
+      badge:"TOP 10", duration:"Before we went out", tags:["Best Of"],
+      story:"Late afternoon on the balcony, before we went anywhere. Nothing to do, nowhere to be yet, and the light was doing something good. I have looked at these more than almost anything else on this page." },
 
     { id:"pizzabakery", day:"2026-08-08", from:"1900", date:"8 August", year:"2026",
       title:"Pizza Bakery", place:"Pizza Bakery", match:"98% Match",
       duration:"A long evening", tags:["Food","Best Of"],
-      story:"The rain finished and we went out and stayed out. Somewhere in the middle of that evening I remember thinking I'd want to come back to it one day. This entire page is more or less that thought, followed through." },
+      story:"We left the balcony and went straight to Pizza Bakery, and these run from the walk over to the very end of the night. Somewhere in the middle of it I remember thinking that I would want to come back to this evening one day. This whole page is that thought, followed through." },
 
     { id:"aug09", day:"2026-08-09", date:"9 August", year:"2026",
-      title:"The Morning After", place:"—", match:"90% Match",
+      title:"The Angry One", place:"—", match:"90% Match",
       duration:"A morning", tags:["Ordinary Days"],
-      story:"The morning after Pizza Bakery. Nothing happened. One photo, no reason to have taken it, and I kept it anyway — which turns out to be the whole tell." },
+      title2:"", story:"One photo, taken for no reason at all, of you being annoyed about something neither of us could name afterwards. It is one of my favourite photographs of you and I have never been able to explain why." },
 
     { id:"fight", day:"2026-08-15", date:"15 August", year:"2026",
       title:"The Big Fight", place:"Outside the house", match:"81% Match",
@@ -62,15 +62,15 @@ window.CONTENT = {
       story:"We had a real one on the fifteenth, and it took the whole day to get out the other side of it.\n\nIt's in here because a page with only the good days would be a lie about us. These were taken that night, after. Look at our faces — it was already over. That's the part I'm proud of. Not that we don't fight. That we have never once left one unfinished." },
 
     { id:"aug16", day:"2026-08-16", date:"16 August", year:"2026",
-      title:"The Next Morning", place:"—", match:"89% Match",
-      duration:"A morning", tags:["Ordinary Days"],
-      story:"The morning after the fight, and everything ordinary again. Out of everything on this page, this is the one that reassures me most." },
+      title:"Waiting For An Auto", place:"Outside our house", match:"96% Match",
+      badge:"TOP 10", duration:"The morning after", tags:["Best Of"],
+      story:"The morning after the fight, outside our house, waiting for an auto that was taking its time. You kissed me while we waited.\n\nOf everything on this page, this is the one I would keep as proof. The day before had been the worst one we have had, and here we are the next morning, in the street, completely fine." },
 
     { id:"aug22", day:"2026-08-22", date:"22 August", year:"2026",
-      title:"Auto Masti", place:"The back of an auto", match:"93% Match",
-      duration:"On the way somewhere", tags:["Ordinary Days"],
+      title:"The Lake, The Room, The Auto", place:"The lake · home · the back of an auto",
+      match:"93% Match", duration:"All day", tags:["Outdoors","Ordinary Days"],
       videos:["videos/web/2026-08-22-auto-masti.mp4"],
-      story:"In the back of an auto, on the way to somewhere neither of us can remember, behaving like two people with absolutely nowhere to be. The video is the memory here. Sound on." },
+      story:"A day that moved around. The lake first, then back to the room, then poker, then an auto somewhere with the two of us behaving like people with nowhere to be. Someone got annoyed somewhere in the middle of it and I am fairly sure it was not me.\n\nWatch the video with the sound on." },
 
     { id:"churchstreet", day:"2026-08-23", date:"23 August", year:"2026",
       title:"Ramen, Ice Cream, Pav Bhaji", place:"Church Street · Westside",
@@ -79,16 +79,16 @@ window.CONTENT = {
       story:"Church Street, and an afternoon that refused to end. You had ramen, I had ice cream, there was pav bhaji somewhere in the middle, and neither of us ever admitted the other had ordered better. Westside after. One of the easiest days we've had." },
 
     { id:"aug24", day:"2026-08-24", date:"24 August", year:"2026",
-      title:"Very Late", place:"—", match:"91% Match",
-      duration:"Late", tags:["Ordinary Days"],
-      story:"One photo, taken far too late at night. Whatever we were doing, it was clearly worth not sleeping for." },
+      title:"The Note On The Mirror", place:"Home", match:"100% Match",
+      badge:"TOP 10", duration:"One photo", tags:["Best Of"],
+      story:"I was not home. You left a note stuck to the mirror before you went.\n\n\u201cBye bye, love you, miss me darling.\u201d\n\nOne photograph, and it is the only thing on this entire page that I did not take of you. You made it for me to find. I found it." },
 
     { id:"birthday", day:"2026-08-26", skip:["173359","213233","213329"],
       date:"26 August", year:"2026",
       title:"My Birthday. Yours, Really.", place:"—", match:"100% Match",
       badge:"SPECIAL", duration:"All day", tags:["Best Of","Why This Exists"],
       videos:["videos/web/2026-08-26-birthday.mp4"],
-      story:"You brought chocolates. You brought flowers. You brought a cake. You bought me clothes, and then wore the matching one so it looked like we'd planned it — and we hadn't, and somehow we had.\n\nI didn't do a single thing that day. You did all of it, and then behaved as though it was nothing worth mentioning.\n\nThat's the day this started. You spent weeks making mine. I've spent mine making yours." },
+      story:"You brought chocolates. You brought flowers. You brought a cake. You bought me clothes and then wore the matching one, so it looked like we had planned it, and somehow we had.\n\nWe took photos together outside our house in the evening, went to Meghana for dinner, and came back and took more with the bouquet you had carried around all day.\n\nI did not do a single thing that day. You did all of it, and then behaved as though it was nothing worth mentioning. That is the day this started." },
 
     { id:"poker", day:"2026-08-29", date:"29 August", year:"2026",
       title:"Poker, And One Furious Face", place:"Poker night",
@@ -118,8 +118,8 @@ window.CONTENT = {
       ids:["dhaba","thyme","poker","birthday","aug24","churchstreet","aug22"] },
 
     { title:"Top 10 Moments This Year", kind:"moments", ranked:true,
-      ids:["dhaba","birthday","balcony","pizzabakery","churchstreet","aug22",
-           "meghana","fight","thyme","lake1"] },
+      ids:["dhaba","birthday","aug24","aug16","balcony","pizzabakery",
+           "churchstreet","aug22","meghana","fight"] },
 
     { title:"The Early Seasons", kind:"childhood" },
 
@@ -127,7 +127,7 @@ window.CONTENT = {
       ids:["dhaba","thyme","pizzabakery","meghana","churchstreet","uniqlo"] },
 
     { title:"Quiet Episodes, No Plot", kind:"moments",
-      ids:["lake1","aug09","aug16","aug24","balcony"] },
+      ids:["lake1","aug09","balcony","meghana","uniqlo"] },
 
     { title:"Watch The Whole Story, In Order", kind:"moments",
       ids:["uniqlo","lake1","meghana","balcony","pizzabakery","aug09","fight",
@@ -145,7 +145,7 @@ window.CONTENT = {
     title: "One Last Thing",
     body: [
       "You brought chocolates. You brought flowers. You brought a cake, and clothes you had picked out for me, and then you stood there and said it was nothing.",
-      "So I made you this. Everything I have of us, in order, from the first call in June to last week.",
+      "So I made you this. Everything I have of us, in order, from April right through to last week.",
       "The ones I keep coming back to are the quiet ones. A morning where nothing happened. An ordinary afternoon. Something very late that I still can't explain to you. I saved every single one of those without ever deciding to.",
       "You are the person my ordinary days are about now. That is the whole thing.",
       "Happy birthday, Aisha."
@@ -154,9 +154,9 @@ window.CONTENT = {
              "photos/2026-08-26-170820.jpg","photos/2026-08-26-213640.jpg"],
     signoff: "From Vikram Aditya, with love.",
     renew: {
-      label: "One more thing",
-      done: "Happy birthday",
-      message: "Four months in and you are already the best thing that has happened to me. I would like to see what a whole year of this looks like."
+      label: "Start the next chapter",
+      done: "Chapter two",
+      message: "Chapter two starts today. Same two people, more restaurants, more photographs of nothing at all. I will show you the whole thing again on your next birthday."
     }
   }
 };

@@ -93,13 +93,41 @@
 
   /* ───────────────────────────────────────────────── the sound ─────── */
   /* Synthesised in the browser — no audio file, nothing copied. */
-  var muted = false;
-  function chime() {
-    if (muted) return;
-    var AC = window.AudioContext || window.webkitAudioContext;
-    if (!AC) return;
-    var ac = new AC();
+  var AC = window.AudioContext || window.webkitAudioContext, ac = null;
+  function audio() {
+    if (!AC) return null;
+    if (!ac) { try { ac = new AC(); } catch (e) { return null; } }
     if (ac.state === 'suspended') ac.resume();
+    return ac;
+  }
+  /* one short note */
+  function note(freq, at, dur, type, vol, glide) {
+    var o = ac.createOscillator(), g = ac.createGain();
+    o.type = type || 'sine';
+    o.frequency.setValueAtTime(freq, at);
+    if (glide) o.frequency.exponentialRampToValueAtTime(glide, at + dur * 0.8);
+    g.gain.setValueAtTime(0.0001, at);
+    g.gain.exponentialRampToValueAtTime(vol, at + 0.012);
+    g.gain.exponentialRampToValueAtTime(0.0001, at + dur);
+    o.connect(g); g.connect(ac.destination);
+    o.start(at); o.stop(at + dur + 0.02);
+  }
+  var sfx = {
+    tick:  function () { if (!audio()) return; note(1180, ac.currentTime, 0.07, 'sine', 0.05); },
+    open:  function () { if (!audio()) return; var t = ac.currentTime;
+                         note(587, t, 0.16, 'sine', 0.07); note(880, t + 0.05, 0.22, 'sine', 0.05); },
+    close: function () { if (!audio()) return; var t = ac.currentTime;
+                         note(660, t, 0.14, 'sine', 0.055, 380); },
+    enter: function () { if (!audio()) return; var t = ac.currentTime;
+                         [523.3, 659.3, 784.0].forEach(function (f, i) {
+                           note(f, t + i * 0.055, 0.5, 'triangle', 0.075); }); },
+    pop:   function () { if (!audio()) return; var t = ac.currentTime;
+                         [523.3, 659.3, 784.0, 1046.5, 1318.5].forEach(function (f, i) {
+                           note(f, t + i * 0.07, 0.85, 'triangle', 0.1); }); }
+  };
+
+  function chime() {
+    if (!audio()) return;
     var out = ac.createGain();
     out.gain.value = 0.9;
     out.connect(ac.destination);
@@ -131,7 +159,6 @@
       o.connect(g); g.connect(out);
       o.start(at); o.stop(at + 2.5);
     });
-    setTimeout(function () { ac.close(); }, 4200);
   }
 
   /* ─────────────────────────────────────────── who's watching ──────── */
@@ -153,13 +180,17 @@
     if (!b) return;
     var p = C.profiles.people[+b.dataset.profile];
     if (!p.enters) { set('pf-blocked', p.blocked || 'Not this one.'); return; }
+    sfx.enter();
     set('nav-avatar', p.name.charAt(0));
     $('nav-avatar').style.background = p.color;
     $('profiles').classList.add('is-gone');
     document.body.classList.remove('is-locked');
+    window.scrollTo(0, 0);                       // always open at the top
     setTimeout(function () { var n = $('profiles'); if (n) n.remove(); }, 600);
   });
   document.body.classList.add('is-locked');
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
 
   /* ───────────────────────────────────────────────── top bar ───────── */
   set('nav-brand', C.config.name);
@@ -313,6 +344,7 @@
   var renew = $('l-renew');
   renew.textContent = L.renew.label;
   renew.addEventListener('click', function () {
+    sfx.pop();
     if (renew.classList.contains('is-done')) { burst(); return; }
     renew.classList.add('is-done');
     renew.textContent = L.renew.done;
@@ -373,7 +405,7 @@
     modal.hidden = true;
     if ($('viewer').hidden) document.body.classList.remove('is-locked');
   }
-  $('m-close').addEventListener('click', closeModal);
+  $('m-close').addEventListener('click', function () { sfx.close(); closeModal(); });
   modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
 
   /* ─────────────────────────────────────── one photo, full screen ──── */
@@ -392,18 +424,19 @@
     viewer.hidden = true;
     if (modal.hidden) document.body.classList.remove('is-locked');
   }
-  $('v-close').addEventListener('click', closeViewer);
-  $('v-prev').addEventListener('click', function () { openViewer(cur - 1); });
-  $('v-next').addEventListener('click', function () { openViewer(cur + 1); });
+  $('v-close').addEventListener('click', function () { sfx.close(); closeViewer(); });
+  $('v-prev').addEventListener('click', function () { sfx.tick(); openViewer(cur - 1); });
+  $('v-next').addEventListener('click', function () { sfx.tick(); openViewer(cur + 1); });
   viewer.addEventListener('click', function (e) {
     if (e.target === viewer || e.target.id === 'v-img') closeViewer();
   });
 
   document.addEventListener('click', function (e) {
     var o = e.target.closest('[data-open]');
-    if (o) { openModal(o.dataset.open); return; }
+    if (o) { sfx.open(); openModal(o.dataset.open); return; }
     var s = e.target.closest('[data-shot]');
-    if (s) openViewer(+s.dataset.shot);
+    if (s) { sfx.open(); openViewer(+s.dataset.shot); return; }
+    if (e.target.closest('[data-scroll]') || e.target.closest('.nav-links a')) sfx.tick();
   });
 
   document.addEventListener('keydown', function (e) {
