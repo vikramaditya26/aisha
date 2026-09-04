@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aisha</title>
+<meta name="theme-color" content="#141414">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- opening title card -->
+<div class="intro" id="intro">
+  <div class="intro-word" id="i-word"></div>
+  <p class="intro-line" id="i-line"></p>
+</div>
+
+<!-- who's watching -->
+<div class="profiles" id="profiles">
+  <div>
+    <p class="pf-brand" id="pf-brand"></p>
+    <h1 class="pf-heading" id="pf-heading"></h1>
+    <ul class="pf-list" id="pf-list"></ul>
+    <p class="pf-blocked" id="pf-blocked"></p>
+  </div>
+</div>
+
+<nav class="nav" id="nav">
+  <p class="nav-brand" id="nav-brand"></p>
+  <ul class="nav-links" id="nav-links"></ul>
+  <div class="nav-avatar" id="nav-avatar">A</div>
+</nav>
+
+<header class="billboard" id="billboard">
+  <div class="bb-media"><img id="bb-img" alt=""></div>
+  <div class="bb-body">
+    <p class="bb-tag" id="bb-tag"></p>
+    <h1 class="bb-title" id="bb-title"></h1>
+    <p class="bb-meta" id="bb-meta"></p>
+    <p class="bb-story" id="bb-story"></p>
+    <div class="bb-actions">
+      <button class="btn btn-play" id="bb-play">&#9654;&nbsp; Play</button>
+      <button class="btn btn-info" id="bb-info">&#9432;&nbsp; More Info</button>
+    </div>
+  </div>
+</header>
+
+<main class="rows" id="rows"></main>
+
+<footer class="letter" id="letter">
+  <p class="letter-label" id="l-label"></p>
+  <h2 class="letter-title" id="l-title"></h2>
+  <div class="letter-body" id="l-body"></div>
+  <div class="letter-photos" id="l-photos"></div>
+  <p class="letter-sign" id="l-sign"></p>
+  <button class="renew" id="l-renew"></button>
+  <p class="renew-msg" id="l-msg" hidden></p>
+</footer>
+
+<canvas class="confetti" id="confetti" aria-hidden="true"></canvas>
+
+<!-- title detail -->
+<div class="modal" id="modal" hidden>
+  <div class="modal-panel">
+    <div class="modal-hero">
+      <img id="m-img" alt="">
+      <button class="modal-close" id="m-close" aria-label="Close">&times;</button>
+      <div class="modal-heading"><h2 class="modal-title" id="m-title"></h2></div>
+    </div>
+    <div class="modal-body">
+      <p class="modal-meta" id="m-meta"></p>
+      <p class="modal-story" id="m-story"></p>
+      <p class="modal-tags" id="m-tags"></p>
+      <p class="modal-shots-label" id="m-shots-label"></p>
+      <div class="modal-shots" id="m-shots"></div>
+    </div>
+  </div>
+</div>
+
+<!-- one photo, full screen -->
+<div class="viewer" id="viewer" hidden>
+  <button class="viewer-close" id="v-close" aria-label="Close">&times;</button>
+  <button class="viewer-nav viewer-prev" id="v-prev" aria-label="Previous">&#8249;</button>
+  <button class="viewer-nav viewer-next" id="v-next" aria-label="Next">&#8250;</button>
+  <img id="v-img" alt="">
+  <p class="viewer-cap" id="v-cap"></p>
+</div>
+
+<script src="photos-index.js"></script>
+<script src="content.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
